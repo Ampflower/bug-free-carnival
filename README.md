@@ -1,4 +1,4 @@
-# Yes, <ampflower.is-immensely.gay>
+# Yes, [ampflower.is-immensely.gay](ampflower.is-immensely.gay)
 
 > They're the best kind of gay
 
