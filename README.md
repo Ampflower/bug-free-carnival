@@ -1,13 +1,5 @@
 # Yes, [ampflower.is-immensely.gay](https://ampflower.is-immensely.gay)
 
-> They're the best kind of gay
+The answer to [is.ampflower.gay?](https://is.ampflower.gay)
 
- &mdash; Moxie
-
-> they make my brain go beep boop
-
- &mdash; Hanna
-
----
-
-Now go check her out on her [personal site](https://ampflower.gay)!
+Quotes present have been obtained with permission.

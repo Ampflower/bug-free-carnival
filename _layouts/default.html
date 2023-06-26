@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	{%if page.direct%}
+	<title>{{page.direct}} 🌺</title>
+	{%else%}
+	<title>{%if page.title%}{{page.title}} | {%endif%}Ampflower 🌺</title>
+	{%endif%}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="theme-color" content="#98c46e"/>
+	<meta name="description" content="{{page.description}}"/>
+	<meta property="og:title" content="{%if page.title%}{{page.title}} | {%endif%}Ampflower 🌺"/>
+	<meta property="og:description" content="{{page.description}}"/>
+	<meta property="og:image" content="https://avatars.githubusercontent.com/u/8528256?0"/>
+	<meta property="og:site_name" content="Ampflower"/>
+	<link type="application/json+oembed" href="https://ampflower.gay/oembed.json"/>
+	{% if page.style %}
+	<link rel="stylesheet" href="/assets/css/{{page.style}}.css"/>
+	{% endif %}
+	{% for style in page.styles %}
+	<link rel="stylesheet" href="/assets/css/{{style}}.css"/>
+	{% endfor %}
+	{% for script in page.deferred %}
+	<script src="{{script}}" defer></script>
+	{% endfor %}
+</head>
+<body>
+	{% if page.url == "/" %}
+	<div itemscope itemtype="https://schema.org/WebSite" aria-hidden="true">
+		<meta itemprop="url" content="https://ampflower.is-immensely.gay"/>
+		<meta itemprop="name" content="Ampflower"/>
+	</div>
+	{% endif %}
+	{{content}}
+</body>
+</html>
