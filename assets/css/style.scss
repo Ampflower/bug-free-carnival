@@ -132,7 +132,7 @@ body {
 
 	& > blockquote {
 		text-align: center;
-		overflow: scroll;
+		overflow-x: auto;
 		margin: 4pt;
 		max-width: calc(32em - 8pt);
 
