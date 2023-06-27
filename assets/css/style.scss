@@ -134,13 +134,13 @@ body {
 		text-align: center;
 		overflow-x: auto;
 		margin: auto;
-		max-width: calc(32em - 8pt);
+		max-width: calc(32em - 12pt);
 
 		// Better aligns the image with the text
 		& > img { vertical-align: middle; }
 
 		// Pre is cursed.
-		& > pre { max-width: min(calc(32em - 8pt), calc(80vw - 8pt)); }
+		& > pre { max-width: min(calc(32em - 12pt), calc(80vw - 12pt)); }
 	}
 
 	& > .quote {
