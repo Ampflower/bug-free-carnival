@@ -106,11 +106,11 @@ All the snuggles for the cuties!'
 		<figure {% if quote.hover %} title="{{quote.hover}}" {% endif %}>
 			{% if quote.spoiler %}
 			<input id="{{quote.spoiler}}" type="checkbox" class="spoiler" />
-			<label for="{{quote.spoiler}}" class="spoiler">
+			<label for="{{quote.spoiler}}" class="quote spoiler">
 				<blockquote>{{quote.quote}}</blockquote>
 			</label>
 			{% else %}
-			<blockquote>{{quote.quote}}</blockquote>
+			<div class="quote"><blockquote>{{quote.quote}}</blockquote></div>
 			{% endif %}
 			<figcaption>&mdash; {{quote.author}}</figcaption>
 		</figure>

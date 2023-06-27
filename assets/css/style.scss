@@ -133,7 +133,7 @@ body {
 	& blockquote {
 		text-align: center;
 		overflow-x: auto;
-		margin: 4pt;
+		margin: auto;
 		max-width: calc(32em - 8pt);
 
 		// Better aligns the image with the text
@@ -141,6 +141,18 @@ body {
 
 		// Pre is cursed.
 		& > pre { max-width: min(calc(32em - 8pt), calc(80vw - 8pt)); }
+	}
+
+	& > .quote {
+		display: flex;
+		flex-grow: 100;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		// Padding is used here because spoiler is intended to fill.
+		padding: 4pt;
+		margin: 0;
 	}
 
 	& > figcaption {
@@ -161,12 +173,6 @@ label.spoiler {
 	color: transparent;
 	background-color: #111;
 	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 0;
-	margin: 0;
 
 	border-radius: calc(1em - 3px);// calc(1em - 3px) 0 0;
 	transition: color 0.2s ease, background-color 0.2s ease;
