@@ -130,7 +130,7 @@ body {
         &:nth-child(8n+8) { background-color: hsl(-35.0442, 50%, 20%); }
     }
 
-	& > blockquote {
+	& blockquote {
 		text-align: center;
 		overflow-x: auto;
 		margin: 4pt;
@@ -153,4 +153,26 @@ body {
 	}
 }
 
+input.spoiler {
+	display: none;
+}
 
+label.spoiler {
+	color: transparent;
+	background-color: #111;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+
+	border-radius: calc(1em - 3px);// calc(1em - 3px) 0 0;
+	transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+input.spoiler:checked~label.spoiler {
+	color: inherit;
+	background-color: unset;
+}

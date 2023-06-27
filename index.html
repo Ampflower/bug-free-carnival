@@ -80,7 +80,14 @@ quotes:
 <div class="figures">
 	{% for quote in page.quotes %}
 		<figure {% if quote.hover %} title="{{quote.hover}}" {% endif %}>
+			{% if quote.spoiler %}
+			<input id="{{quote.spoiler}}" type="checkbox" class="spoiler" />
+			<label for="{{quote.spoiler}}" class="spoiler">
+				<blockquote>{{quote.quote}}</blockquote>
+			</label>
+			{% else %}
 			<blockquote>{{quote.quote}}</blockquote>
+			{% endif %}
 			<figcaption>&mdash; {{quote.author}}</figcaption>
 		</figure>
 	{% endfor %}
