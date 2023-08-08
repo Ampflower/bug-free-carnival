@@ -1,6 +1,8 @@
 ---
 direct: Ampflower is gay!
 description: Yes, Ampflower is immensely gay!
+deferred:
+ - /assets/js/index.js
 quotes:
  - author: Moxie
    quote: "They're the best kind of gay"
@@ -42,7 +44,7 @@ quotes:
 
    Caused by: java.lang.ClassNotFoundException: net.fabricmc.devlaunchinjector.Main</pre>"
  - author: Zeichenreihe
-   quote: "<strike>and that's what you get from trying fabric classes, without asking the pineapple council</strike>
+   quote: "<s>and that's what you get from trying fabric classes, without asking the pineapple council</s>
            <img src=\"https://cdn.discordapp.com/emojis/1117566742445703359.webp?size=44&quality=lossless\" width=\"24\" height=\"24\" alt=\"pineapple\"/>"
  - author: Kichura
    quote: "Made with <b>Jeff</b>Phone, and boy have we <b>patented</b> it."
@@ -64,8 +66,16 @@ quotes:
 <img src="https://cdn.discordapp.com/emojis/1019580823709683722.webp?size=44&quality=lossless" width="24" height="24" alt="blobfox snuggle" />
 <br/>
 All the snuggles for the cuties!'
- - author: Starchildren
-   quote: "Ampflower approve of Starchild Egg Cracking Services"
+ - author: ember (ecorous)
+   quote: "And &another gay one"
+ - author: Auria
+   quote: miau
+   random:
+    - meow
+    - miau
+    - mrow
+    - mriau
+    - mreow
  - author: Liam Compasses
    quote: "Quill's chest binder <i>now in real life</i>"
  - author: Fnige
@@ -86,7 +96,7 @@ All the snuggles for the cuties!'
  - author: Ember
    quote: '<img src="https://cdn.discordapp.com/emojis/1109811879360086056.webp?size=44&quality=lossless" width="24" height="24" alt="blobfox pineapple" />'
  - author: blackstorm118
-   quote: "Never have a I heard so much and yet understood so little than being friends with ampflower"
+   quote: "Never have I heard so much and yet understood so little than being friends with ampflower"
  - author: IntelliJ
    quote: "Gay gay gay or gay man or lesbian or gay person/people gay"
    hover: "Consider using 'gay or gay man or lesbian or gay person/people' instead of 'homosexual'."
@@ -94,6 +104,23 @@ All the snuggles for the cuties!'
    quote: "They're so gay they spread the gayness to Minecraft."
  - author: Unity
    quote: "<pre>The Progressive CPU lightmapper is not supported on Apple silicon, switching to the Progressive GPU lightmapper.<br/>UnityEditor.EditorApplication:Internal_RestoreLastOpenedScenes ()</pre>"
+ - author: nobody specific
+   quote: "They'll find a way, whether or not it was intended is not relevant"
+ - author: Adrien
+   quote: "So we have a Debian install that we installed like Arch over netboot and merged /boot + EFI, all while using ZFS as root<br/>
+Oh, and to top it all off: SYSLINUX is the bootloader"
+ - author: Aury @ Astralchroma
+   quote: "arch running mongodb and zfs on 512mb ram, installed via bootstrap from arch installed via bootstrap from centos 7"
+ - author: kb1000
+   quote: "more cursed better cursed"
+ - author: Ember
+   quote: '<img src="https://cdn.discordapp.com/emojis/982107002434101248.webp?size=44&quality=lossless" width="24" height="24" alt="blobfox terrified" />'
+ - author: JavaScript
+   quote: "<code>&lbrack;-1, -5, 0, 10, 5&rbrack;.sort() == &lbrack;-1, -5, 0, 10, 5&rbrack;</code><br/>You didn't say what to sort by so clearly they're all strings"
+ - author: Plumeria Stardust
+   quote: "I love having to restart our computer 3 times because it randomly corrupted our microphone drivers I love it so much.<br/>
+I love Windows. I love Windows. I love Windows. I love Windows. I love Windows. I love Windows.<br/>
+<s>You should probably screencap this for when we say Windows is perfectly fine and we have no problems with it and that we find no need to switch to Linux</s>"
 ---
 
 <div class="card">
@@ -105,14 +132,18 @@ All the snuggles for the cuties!'
 {% if page.quotes %}
 <div class="figures">
 	{% for quote in page.quotes %}
-		<figure {% if quote.hover %} title="{{quote.hover}}" {% endif %}>
+		<figure {% if quote.hover %} title="{{quote.hover}}" {% endif %} {% if quote.random %} class="randomizable" {% endif %}>
 			{% if quote.spoiler %}
 			<input id="{{quote.spoiler}}" type="checkbox" class="spoiler" />
 			<label for="{{quote.spoiler}}" class="quote spoiler">
-				<blockquote>{{quote.quote}}</blockquote>
+			{% else %}
+			<div class="quote">
+			{% endif %}
+				<blockquote {% if quote.random %} class="random" data-random={{quote.random | size}} {% for random in quote.random %} data-random{{forloop.index0}}="{{random}}" {% endfor %} {% endif %}>{{quote.quote}}</blockquote>
+			{% if quote.spoiler %}
 			</label>
 			{% else %}
-			<div class="quote"><blockquote>{{quote.quote}}</blockquote></div>
+			</div>
 			{% endif %}
 			<figcaption>&mdash; {{quote.author}}</figcaption>
 		</figure>
