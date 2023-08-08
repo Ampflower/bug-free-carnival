@@ -139,7 +139,7 @@ I love Windows. I love Windows. I love Windows. I love Windows. I love Windows. 
 			{% else %}
 			<div class="quote">
 			{% endif %}
-				<blockquote {% if quote.random %} class="random" data-random={{quote.random | size}} {% for random in quote.random %} data-random{{forloop.index0}}="{{random}}" {% endfor %} {% endif %}>{{quote.quote}}</blockquote>
+				<blockquote {% if quote.random %} class="random" data-random="{{quote.random | size}}" {% for random in quote.random %} data-random{{forloop.index0}}="{{random}}" {% endfor %} {% endif %}>{{quote.quote}}</blockquote>
 			{% if quote.spoiler %}
 			</label>
 			{% else %}
