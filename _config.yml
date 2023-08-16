@@ -3,6 +3,9 @@ exclude:
   - LICENSE
   - "README*"
 
+include:
+  - .well-known
+
 defaults:
   - scope:
       path: ""
