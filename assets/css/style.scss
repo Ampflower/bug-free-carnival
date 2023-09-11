@@ -187,6 +187,10 @@ input.spoiler:checked~label.spoiler {
 	cursor: pointer;
 }
 
+.upside-down {
+	transform: rotate(180deg);
+}
+
 hr {
 	width: 100%;
 }

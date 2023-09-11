@@ -27,6 +27,8 @@ quotes:
    quote: Volt/Ohmflower
  - author: Ringlings
    quote: "Before meeting ampflower, I would have never known what it's like to know ampflower. Now that I have, I regret every single cursed project I've been morbidly curious about"
+ - author: Emeowly
+   quote: '<img src="https://cdn.discordapp.com/emojis/1149665010151342160.webp?size=44&quality=lossless" width="24" height="24" alt="cat snuggle" />'
  - author: ender
    quote: "Who are you and why are you in my closet"
  - author: Octal
@@ -119,6 +121,9 @@ Oh, and to top it all off: SYSLINUX is the bootloader"
    quote: "more cursed better cursed"
  - author: Ember
    quote: '<img src="https://cdn.discordapp.com/emojis/982107002434101248.webp?size=44&quality=lossless" width="24" height="24" alt="blobfox terrified" />'
+ - author: "Ellie &amp; Quill"
+   quote: "KWEEEEEE"
+   hover: "I thin kwe have too many names"
  - author: JavaScript
    quote: "<code>&lbrack;-1, -5, 0, 10, 5&rbrack;.sort() == &lbrack;-1, -5, 0, 10, 5&rbrack;</code><br/>You didn't say what to sort by so clearly they're all strings"
  - author: Plumeria Stardust
@@ -142,6 +147,26 @@ I love Windows. I love Windows. I love Windows. I love Windows. I love Windows. 
 &#0013;Tsuki: Maybe ignorance?
 &#0013;Null: Boredom and chaos are the parents of creation
 &#0013;Tsuki: Pffff"
+ - author: Skylar Sophia Akari | Circe
+   quote: "And Flower And Flower And Flower... Wait. It's &flwr!"
+ - author: ender
+   quote: "hey did you know that in terms of cuteness, &flwr is the cutest?"
+ - author: Coxy, Sophia 💈 Aurora, Circe
+   quote: '<img src="https://cdn.discordapp.com/emojis/1019580806072647731.webp?size=96&quality=lossless" width="24" height="24" alt="blobfox heart" />
+		<img src="https://cdn.discordapp.com/emojis/981046672064921621.webp?size=96&quality=lossless" width="24" height="24" alt="blobfox flower hair" />
+		<br/>I become &flwr'
+ - author: Ezera Fnige
+   quote: "&gt; &amp;flwr<br/><i>dereferences you</i>"
+ - author: Rosamunde Vermilion-Einhart von Dorman | Circe
+   quote: "The Australian have invaded this text box"
+   hover: "Rosa, oh so adorable, oh so adorable, oh so adorable, oh so adorable, oh so adorable, oh so adorable, oh so adorable, oh so adorable"
+   class: upside-down
+ - author: Ferra @ Astralchroma
+   quote: "unnecessarily salty"
+ - author: Ellie
+   quote: "I think we have too many names"
+ - author: 'emily.gay'
+   quote: 'she''s so fucking gay <img src="https://cdn.discordapp.com/emojis/1131188335143047219.webp?size=44&quality=lossless" width="24" height="24" alt="lesbeean; lesbian bee">'
 ---
 
 <div class="card">
@@ -153,7 +178,7 @@ I love Windows. I love Windows. I love Windows. I love Windows. I love Windows. 
 {% if page.quotes %}
 <div class="figures">
 	{% for quote in page.quotes %}
-		<figure {% if quote.hover %} title="{{quote.hover}}" {% endif %} {% if quote.random %} class="randomizable" {% endif %}>
+		<figure {%if quote.class%}class="{{quote.class}}"{%endif%} {% if quote.hover %} title="{{quote.hover}}" {% endif %} {% if quote.random %} class="randomizable" {% endif %}>
 			{% if quote.spoiler %}
 			<input id="{{quote.spoiler}}" type="checkbox" class="spoiler" />
 			<label for="{{quote.spoiler}}" class="quote spoiler">
