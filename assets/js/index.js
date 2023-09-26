@@ -1,3 +1,5 @@
+import Elevator from './elevator.min.js';
+
 function setRandomQuote(quote) {
 	quote.innerText = quote.dataset['random'+Math.floor(Math.random() *+ quote.dataset.random)];
 }
@@ -11,3 +13,11 @@ for(let randomizable of document.getElementsByClassName('randomizable')) {
 }
 
 document.body.classList += 'js'
+
+var elevator = new Elevator({
+	element: document.getElementById('elevator-button'),
+	mainAudio: '/assets/audio/elevator.ogg',
+	duration: 20000
+});
+
+document.getElementById('elevator-button').addEventListener("click", elevator.elevate);

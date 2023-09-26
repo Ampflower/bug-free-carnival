@@ -78,6 +78,18 @@ body {
 	}
 }
 
+footer {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
 .figures {
 	display: flex;
 	flex-direction: row;
@@ -183,7 +195,15 @@ input.spoiler:checked~label.spoiler {
 	background-color: unset;
 }
 
-.js .randomizable {
+.requires-js {
+	visibility: hidden;
+}
+
+.js .requires-js {
+	visibility: visible;
+}
+
+.js .randomizable,#elevator-button {
 	cursor: pointer;
 }
 
