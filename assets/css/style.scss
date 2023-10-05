@@ -1,216 +1,222 @@
 ---
 ---
 
-body {
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	font-size: 12pt;
-	z-index: -3;
-	overflow-x: hidden;
+:root {
+	color-scheme: light dark;
+}
 
-	@media screen and (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
+	body {
 		background-color: #181720;
 		color: white;
+	}
 
-		a {
-			color: #7AF;
-			&:visited {
-				color: #FAF;
-			}
-		}
+	a {
+		color: #7AF;
+	}
+
+	a:visited {
+		color: #FAF;
 	}
 }
 
-// From ampflower.gay // by Amethyst
-@mixin card-detached-box-shadow ($border-width: 0px) {
-	position: relative;
-
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		box-sizing: border-box;
-		inset: calc($border-width * -1);
-		background: transparent;
-		z-index: -2;
-		border-radius: inherit;
-		border: $border-width solid transparent;
-		@content;
-	}
-}
-
-.card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	padding: 0.5em;
-	margin: 2.5em;
-
+footer>div,
+main {
+	max-width: min(70ch, 80dvw);
+	margin: 2.5rem auto;
 	background-color: #d6b8ff;
-	border: 3px solid #98c46e;
-	border-radius: 1em;
+	border: 0.2rem solid #98c46e;
+	border-radius: 1rem;
+	text-align: center;
+}
 
-	max-width: 80vw;
-
-	// A small hack to have the box-shadow be on a different z-index,
-	// allowing me to put stuff behind the `.card` but before the box-shadow.
-	@include card-detached-box-shadow(3px) {
-		box-shadow: 0em 1em 3em -1em black;
-	}
-
-	& > h1 {
-		margin-top: 0;
-	}
-
-	& > :last-child {
-		margin-bottom: 0;
-	}
-
-	@media screen and (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
+	main {
 		background-color: #2f2442;
 		border-color: #32471f;
 	}
 }
 
-footer {
-	width: 100vw;
-	height: 100vh;
-	margin: 0;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+header,
+article {
+	margin: 2rem 0.5rem;
 }
 
-.figures {
+h1 {
+	margin: 0;
+}
+
+article>div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-items: stretch;
-	gap: .5em;
-	max-width: 32em;
+	gap: 0.5rem;
+	filter: drop-shadow(0rem 1rem 3rem #000000A0);
 }
 
-//figure:nth-child(8n+1) { background-color: #422436, #24141e; }
-//figure:nth-child(8n+2) { background-color: #422435, #381f2f; }
-//figure:nth-child(8n+3) { background-color: #333333, #383838; }
-//figure:nth-child(8n+4) { background-color: #423024, #31241b; }
-//figure:nth-child(8n+5) { background-color: #422b24, #241714; }
-//figure:nth-child(8n+6) { background-color: #423024, #31241b; }
-//figure:nth-child(8n+7) { background-color: #333333, #383838; }
-//figure:nth-child(8n+8) { background-color: #422435, #381f2f; }
-
-.figures > figure {
-	box-sizing: border-box;
+blockquote {
+	margin: 0;
+	border: 0.2rem solid;
+	border-radius: 1em;
+	flex-grow: 1;
+	min-width: 0;
 	display: flex;
 	flex-direction: column;
-	flex-grow: 2;
-	justify-content: space-between;
+}
 
-	margin: 0;
+blockquote> :first-child {
+	margin-block: auto;
+}
 
-    border: 3px solid;
-    border-radius: 1em;
-	box-shadow: 0em 1em 3em -1em black;
+blockquote:nth-child(8n+1) {
+	border-color: #A30262;
+	background-color: hsl(-35.7763, 100%, 76%);
+}
 
-	// Have a cursed block of colours.
-	&:nth-child(8n+1) { border-color: #A30262; background-color: hsl(-35.7763, 100%, 76%); }
-    &:nth-child(8n+2) { border-color: #D362A4; background-color: hsl(-35.0442, 100%, 86%); }
-    &:nth-child(8n+3) { border-color: #FFFFFF; background-color: hsl(0, 0%, 86%); }
-    &:nth-child(8n+4) { border-color: #FF9A56; background-color: hsl(24.14, 100%, 86%); }
-    &:nth-child(8n+5) { border-color: #D52D00; background-color: hsl(12.67, 100%, 76%); }
-    &:nth-child(8n+6) { border-color: #FF9A56; background-color: hsl(24.14, 100%, 86%); }
-    &:nth-child(8n+7) { border-color: #FFFFFF; background-color: hsl(0, 0%, 86%); }
-    &:nth-child(8n+8) { border-color: #D362A4; background-color: hsl(-35.0442, 100%, 86%); }
+blockquote:nth-child(8n+2) {
+	border-color: #D362A4;
+	background-color: hsl(-35.0442, 100%, 86%);
+}
 
-    @media screen and (prefers-color-scheme: dark) {
-		&:nth-child(8n+1) { background-color: hsl(-35.7763, 50%, 15%); }
-        &:nth-child(8n+2) { background-color: hsl(-35.0442, 50%, 20%); }
-        &:nth-child(8n+3) { border-color: #999; background-color: hsl(0, 0%, 22%); }
-        &:nth-child(8n+4) { background-color: hsl(24.14, 50%, 20%); }
-        &:nth-child(8n+5) { background-color: hsl(12.67, 50%, 15%); }
-        &:nth-child(8n+6) { background-color: hsl(24.14, 50%, 20%); }
-        &:nth-child(8n+7) { border-color: #999; background-color: hsl(0, 0%, 20%); }
-        &:nth-child(8n+8) { background-color: hsl(-35.0442, 50%, 20%); }
-    }
+blockquote:nth-child(8n+3) {
+	border-color: #FFFFFF;
+	background-color: hsl(0, 0%, 86%);
+}
 
-	& blockquote {
-		text-align: center;
-		overflow-x: auto;
-		margin: auto;
-		max-width: calc(32em - 12pt);
+blockquote:nth-child(8n+4) {
+	border-color: #FF9A56;
+	background-color: hsl(24.14, 100%, 86%);
+}
 
-		// Better aligns the image with the text
-		& > img { vertical-align: middle; }
+blockquote:nth-child(8n+5) {
+	border-color: #D52D00;
+	background-color: hsl(12.67, 100%, 76%);
+}
 
-		// Pre is cursed.
-		& > pre { max-width: min(calc(32em - 12pt), calc(80vw - 12pt)); }
+blockquote:nth-child(8n+6) {
+	border-color: #FF9A56;
+	background-color: hsl(24.14, 100%, 86%);
+}
+
+blockquote:nth-child(8n+7) {
+	border-color: #FFFFFF;
+	background-color: hsl(0, 0%, 86%);
+}
+
+blockquote:nth-child(8n+8) {
+	border-color: #D362A4;
+	background-color: hsl(-35.0442, 100%, 86%);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	blockquote:nth-child(8n+1) {
+		background-color: hsl(-35.7763, 50%, 15%);
 	}
 
-	& > .quote {
-		display: flex;
-		flex-grow: 100;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		// Padding is used here because spoiler is intended to fill.
-		padding: 4pt;
-		margin: 0;
+	blockquote:nth-child(8n+2) {
+		background-color: hsl(-35.0442, 50%, 20%);
 	}
 
-	& > figcaption {
-		text-align: center;
-		margin-up: 2pt;
-		padding: 2pt .5em 2pt 4pt;
+	blockquote:nth-child(8n+3) {
+		border-color: #999;
+		background-color: hsl(0, 0%, 22%);
+	}
 
-		background-color: #00000011;
-		border-radius: 0 0 calc(1em - 3px) calc(1em - 3px);
+	blockquote:nth-child(8n+4) {
+		background-color: hsl(24.14, 50%, 20%);
+	}
+
+	blockquote:nth-child(8n+5) {
+		background-color: hsl(12.67, 50%, 15%);
+	}
+
+	blockquote:nth-child(8n+6) {
+		background-color: hsl(24.14, 50%, 20%);
+	}
+
+	blockquote:nth-child(8n+7) {
+		border-color: #999;
+		background-color: hsl(0, 0%, 20%);
+	}
+
+	blockquote:nth-child(8n+8) {
+		background-color: hsl(-35.0442, 50%, 20%);
 	}
 }
 
-input.spoiler {
+blockquote>* {
+	padding: 0.5rem;
+}
+
+blockquote p {
+	margin: 0;
+}
+
+pre {
+	overflow-x: auto;
+	margin-bottom: 0;
+}
+
+blockquote>p>img {
+	height: 24px;
+	vertical-align: middle;
+}
+
+cite {
+	display: block;
+	background-color: #00000011;
+	font-style: normal;
+}
+
+cite::before {
+	content: '— ';
+}
+
+hr,
+article>p {
+	margin: 2rem 0;
+}
+
+.upside-down {
+	rotate: 180deg;
+}
+
+input[type='checkbox'] {
 	display: none;
 }
 
-label.spoiler {
+input[type='checkbox']+label {
 	color: transparent;
 	background-color: #111;
 	cursor: pointer;
-
-	border-radius: calc(1em - 3px);// calc(1em - 3px) 0 0;
+	border-radius: 0.8rem;
 	transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-input.spoiler:checked~label.spoiler {
+input:checked+label {
 	color: inherit;
 	background-color: unset;
 }
 
-.requires-js {
-	visibility: hidden;
+footer {
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
 }
 
-.js .requires-js {
-	visibility: visible;
+footer>div {
+	margin: auto;
+	padding: 1rem;
 }
 
-.js .randomizable,#elevator-button {
-	cursor: pointer;
+footer>div> :first-child {
+	margin-top: 1rem;
 }
 
-.upside-down {
-	transform: rotate(180deg);
+footer>div>p {
+	margin-block: 2rem;
 }
 
-hr {
-	width: 100%;
+footer>div> :last-child {
+	margin-bottom: 1rem;
 }
